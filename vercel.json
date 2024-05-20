@@ -24,4 +24,7 @@
       "dest": "phonebook_project/wsgi.py"
     }
   ]
+    "env": {
+    "PYTHONPATH": "./phonebook_project"
+  }
 }
