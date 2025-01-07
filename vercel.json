@@ -1,20 +1,24 @@
 {
-  "builds": [
-    {
-      "src": "phonebook_project/asgi.py",
-      "use": "@vercel/python",
-      "config": { "runtime": "python3.9" }
-    },
-    {
-      "src": "build_files.sh",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "staticfiles" }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "phonebook_project/asgi.py"
-    }
-  ]
+    "builds": [
+        {
+            "src": "build_files.sh",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "staticfiles"
+            }
+        },
+        {
+            "src": "phonebook_project/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "runtime": "python3.9"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "phonebook_project/wsgi.py"
+        }
+    ]
 }
