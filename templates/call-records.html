@@ -46,6 +46,8 @@
                     <button> <a href="./{{contact.id}}"> Open </a> </button>
                 </td> -->
             </tr>
+            {%empty%}
+                <h3 style="color: red;">Call History is empty.</h3>
             {% endfor %}
         </table>
         <br><br><br>

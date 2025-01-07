@@ -69,6 +69,8 @@
                     <button class="btn btn-secondary btn-sm"> <a class="text-white" href="./{{phonebook.id}}">Detail</a></button>
                 </td>
             </tr>
+            {%empty%}
+              <h4 style="color: red;">This Phonebook is empty. please create using above button.</h4>
             {% endfor %}
         </table>
     </div>

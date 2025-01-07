@@ -3,6 +3,7 @@ from twilio.rest import Client
 import threading
 import time,datetime
 from contacts.models import CallRecords
+from django.conf import settings
 
 def make_call(account_sid, auth_token,name, from_, to, twiml,uid):
     client = Client(account_sid, auth_token)
@@ -47,11 +48,10 @@ def make_call(account_sid, auth_token,name, from_, to, twiml,uid):
         print("An error occurred:", e)
 
 def dial_all(uid,msg,phs):
-
-    account_sid = 'ACea33c81298bc1865f379ab62223b1aaf'
-    auth_token = '95567ed86c8a6281f740ae467f20f135'
-    from_number = '+18782061954' 
-    #to_numbers = ['+918143575574', '+917008299284','+916372484602']  # Add multiple numbers here
+    account_sid=settings.ACCOUNT_SID
+    auth_token = settings.AUTH_TOKEN 
+    from_number = '+12184963740' 
+    #to_numbers = ['+91XXXXXXXXXX', '+91XXXXXXXXXX']  # Add multiple numbers here
     twiml = '<Response><Say voice="woman">'+msg+'</Say></Response>'
 
     threads = []

@@ -15,7 +15,7 @@
             "dest": "/static/$1"
         },
         {
-            "src": "/(.*)"
+            "src": "/(.*)",
             "dest": "phonebook_project/wsgi.py"
         }
     ]

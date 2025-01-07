@@ -51,6 +51,8 @@
                     <button> <a href="./{{contact.id}}"> Open </a> </button>
                 </td> -->
             </tr>
+            {%empty%}
+                <h4 style="color: red;">Your contact list is empty.Please create using above button.</h4>
             {% endfor %}
         </table>
         <br><br><br>
